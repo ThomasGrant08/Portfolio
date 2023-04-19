@@ -1,0 +1,88 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Form Submission</title>
+    <meta name="viewport" content="width=device-width" />
+    <style type="text/css">
+        @@media only screen and (max-width: 550px), screen and (max-device-width: 550px) {
+
+        {
+            body [yahoo] .buttonwrapper
+
+        {
+
+        {
+            background-color: transparent !important;
+        }
+
+        }
+
+        body[yahoo] .button {
+
+        {
+            padding: 0 !important;
+        }
+
+        }
+
+        body[yahoo] .button a {
+
+        {
+            background-color: #9b59b6;
+            padding: 15px 25px !important;
+        }
+
+        }
+        }
+        }
+
+        @@media only screen and (min-device-width: 601px) {
+
+        {
+            .content
+
+        {
+
+        {
+            width: 600px !important;
+        }
+
+        }
+
+        .col387 {
+
+        {
+            width: 387px !important;
+        }
+
+        }
+        }
+        }
+    </style>
+</head>
+<body bgcolor="#ffffff" style="margin: 0; padding: 0;" yahoo="fix">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 100vw;" class="content">
+        <tr>
+            <td align="center" bgcolor="#0C2340" style="padding: 10px 20px 40px 20px; color: white; font-family: Arial, sans-serif; font-size: 2.5rem; line-height: 1.5; font-weight: bold;">
+                <span>@Model.Title</span><br />
+            </td>
+        </tr>
+    </table>
+    <table align="center" border="0" cellpadding="0" cellspacing="10" style="width: 100%; max-width: 570px; margin-left: auto; margin-right: auto; border-spacing: 20px;" class="content">
+        <tr>
+            <td><span><strong>Name:</strong></span></td>
+            <td><span>@Model.Name</span></td>
+        </tr>
+        <tr>
+            <td><span><strong>Email:</strong></span></td>
+            <td><span>@Model.Email</span></td>
+        </tr>
+        <tr>
+            <td><span><strong>Message:</strong></span></td>
+        </tr>
+        <tr>
+            <td colspan="100"><span>@Model.Message</span></td>
+        </tr>
+    </table>
+</body>
+</html>

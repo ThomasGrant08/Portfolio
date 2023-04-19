@@ -1,0 +1,15 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+<div class="Block HeroBlock">
+	<div class="Breakpoint-Wrap">
+		<div class="Text">
+			<h1>@Model.HeroTitle</h1>
+			<p>@Model.HeroText</p>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    #region Name Set
+
+    string pageTitle = CheckNull(Model.Value("sEOTitle"));
+    if (String.IsNullOrEmpty(pageTitle))
+    {
+        pageTitle = Model.Name + " | " + Umbraco.ContentAtRoot().FirstOrDefault().Name;
+    }
+    #endregion
+    #region Description Set
+
+    string metaDescription = CheckNull(Model.Value("metaDescription"));
+    if (String.IsNullOrEmpty(metaDescription))
+    {
+        metaDescription = pageTitle;
+    }
+
+    #endregion
+    #region Robots
+    string findable = "noindex nofollow";
+    if (Model.Value<bool>("findable"))
+    {
+        findable = "index follow";
+    }
+    #endregion
+    #region Get Favicons
+    var favUrl = Umbraco.ContentAtRoot().FirstOrDefault().Value<IPublishedContent>("icon").Url();
+    var favWhite = Umbraco.ContentAtRoot().FirstOrDefault().Value<IPublishedContent>("invertedIcon").Url();
+    #endregion
+}
+
+<title>@pageTitle</title>
+<meta name="description" content="@metaDescription" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="format-detection" content="telephone=no" />
+
+<link rel="icon" href="@favUrl" type="image/x-icon" media="(prefers-color-scheme: light)" />
+<link rel="icon" href="@favWhite" type="image/x-icon" media="(prefers-color-scheme: dark)" />
+
+<meta-fields></meta-fields>
+
+@{
+    #region Functions
+
+    string CheckNull(object metaData)
+    {
+        string result = (metaData == null) ? string.Empty : metaData.ToString();
+        return result;
+    }
+
+    #endregion
+}
