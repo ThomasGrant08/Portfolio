@@ -1,5 +1,6 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using ThomasGrant.Utility;
 
 @{
     var content = (ContentModels.AboutBlock)Model.Content;
@@ -7,5 +8,20 @@
 }
 
 <div class="Block AboutBlock">
-
+    <div class="Breakpoint-Wrap">
+        <div class="Text">
+            <h2>@content.Header</h2>
+            @content.Text
+        </div>
+        <div class="Image">
+            @if(content.Image != null)
+            {
+                <img src="@content.Image" alt="@content.Image.GetProperty("altTag")" />
+            } else
+            {
+                @await DefaultImageMaker.BuildDefaultImage();
+            }
+            
+        </div>
+    </div>
 </div>

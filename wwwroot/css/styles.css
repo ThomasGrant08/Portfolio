@@ -125,6 +125,13 @@ h1 {
     .Block {
         padding: 20px 0;
     }
+
+    .Block .Breakpoint-Wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
     /* #endregion*/
 
     /* #endregion*/

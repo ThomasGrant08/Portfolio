@@ -39,6 +39,7 @@ namespace ThomasGrantPortfolio
                 opts.FileProviders.Add(new PhysicalFileProvider(Directory.GetCurrentDirectory() + @"\Views")); //This will be the root path
             });
 
+            services.AddRazorTemplating();
             services.AddUmbraco(_env, _config)
                 .AddBackOffice()
                 .AddWebsite()
