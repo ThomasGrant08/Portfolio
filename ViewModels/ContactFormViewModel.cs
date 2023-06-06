@@ -14,5 +14,7 @@ namespace ThomasGrant.ViewModels
         [Required(ErrorMessage = "Oops, looks like you forgot to fill in the message")]
         public string Message { get; set; }
 
+        public bool? FileRequest { get; set; }
+
     }
 }

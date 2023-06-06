@@ -6,10 +6,16 @@
 }
 
 <div class="Block HeroBlock">
+	<div id="blob"></div>
+	<div id="blur"></div>
 	<div class="Breakpoint-Wrap">
 		<div class="Text">
-			<h1>@Model.HeroTitle</h1>
-			<p>@Model.HeroText</p>
+			<h1>@Model.Title</h1>
+			<p>@Model.Text</p>
 		</div>
 	</div>
-</div>
+</div
+@Html.GetBlockListHtml(Model.Blocks)
+
+@section scripts {
+}

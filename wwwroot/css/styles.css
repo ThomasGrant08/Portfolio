@@ -2,14 +2,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
 :root {
-    --primary-Color: #005F63;
-    --secondary-Color: #007f85;
-    --body-Color: #2C2C2C;
+    --prim-Color: #372549;
+    --seco-Color: #FE5F55;
+    --tert-Color: #65AFFF;
+    --body-Color: #F7F7FF;
     --white: #F5F5F5;
 }
 
 body {
     background-color: var(--body-Color);
+    background-image: url(/images/paper_texture.png);
+    background-size: 200px;
+}
+
+a {
+    --bs-link-hover-color-rgb: var(--seco-Color);
+}
+
+h1 {
+    font-family: Futura,Trebuchet MS,Arial,sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.5rem;
 }
 
 /* #region 320*/
@@ -20,60 +36,132 @@ body {
 /* #region Block*/
 .Block {
     padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.Breakpoint-Wrap {
+    position: relative;
+    z-index: 2;
 }
 /* #endregion*/
+
+/* #region Hero */
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.5;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+#blob {
+    background-color: white;
+    height: 34vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--tert-Color), var(--seco-Color));
+    animation: rotate 20s infinite;
+    opacity: 0.8;
+}
+
+#blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    backdrop-filter: blur(12vmax);
+}
+
+#blur {
+    box-shadow: inset 0px 10px 10px -5px rgba(0, 0, 0, 0.5), inset 0px -10px 10px -5px rgba(0, 0, 0, 0.5);
+}
+/* #endregion */
 
 /* #endregion*/
 
 /* #endregion*/
 
 /* #region 768*/
-.Breakpoint-Wrap {
-    padding: 0 40px;
+@media (min-width: 768px) {
+    .Breakpoint-Wrap {
+        padding: 0 40px;
+    }
+    /* #region Blocks */
+    /* #region Block*/
+    /* #endregion*/
+
+    /* #endregion*/
+
+    /* #endregion*/
+
 }
-/* #region Blocks */
-/* #region Block*/
-/* #endregion*/
-
-/* #endregion*/
-
-/* #endregion*/
 
 /* #region 1110*/
-.Breakpoint-Wrap {
-    padding: unset;
-    max-width: 1110px;
-    margin-left: auto;
-    margin-right: auto;
-}
-/* #region Blocks */
-/* #region Block*/
-.Block {
-    padding: 20px 0;
-}
-/* #endregion*/
 
-/* #endregion*/
+@media (min-width: 1170px) {
+    .Breakpoint-Wrap {
+        padding: unset;
+        max-width: 1110px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* #region Blocks */
+    /* #region Block*/
+    .Block {
+        padding: 20px 0;
+    }
+    /* #endregion*/
 
-/* #endregion*/
+    /* #endregion*/
+
+    /* #endregion*/
+}
+
 
 /* #region 1410*/
-.Breakpoint-Wrap {
-    max-width: 1410px;
-    margin-left: auto;
-    margin-right: auto;
+@media (min-width: 1470px) {
+    .Breakpoint-Wrap {
+        max-width: 1410px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+    /* #region Blocks */
+    /* #region Block*/
+    .Block {
+        padding: 60px 0;
+    }
+    /* #endregion*/
+
+    /* #endregion*/
+
+    /* #endregion*/
+
 }
-/* #region Blocks */
-/* #region Block*/
-.Block {
-    padding: 30px 0;
-}
-/* #endregion*/
-
-/* #endregion*/
-
-/* #endregion*/
-
-/* #region Edge Cases*/
-
-/* #endregion*/

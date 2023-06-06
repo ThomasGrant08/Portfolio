@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<WebPages>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+<div class="Block HeroBlock">
+	<div id="blob"></div>
+	<div id="blur"></div>
+	<div class="Breakpoint-Wrap">
+		<div class="Text">
+			@Html.Partial("Breadcrumb")
+			<h1>@Model.Title</h1>
+			<p>@Model.Text</p>
+		</div>
+	</div>
+</div>

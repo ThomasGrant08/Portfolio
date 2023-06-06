@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+<script type="text/javascript">
+
+const blob = document.getElementById("blob");
+
+window.onpointermove = event => { 
+  const { pageX, pageY } = event;
+  
+  blob.animate({
+    left: `${pageX}px`,
+    top: `${pageY}px`
+  }, { duration: 2000, fill: "forwards" });
+}
+	</script>

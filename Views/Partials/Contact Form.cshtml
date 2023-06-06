@@ -4,15 +4,15 @@
 @using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.Submit)))
 {
     <div class="Input-Wrap">
-        @Html.TextBoxFor(m => m.Name, new {@class="form-control", placeholder = Html.DisplayNameFor(m => m.Name)})
+        @Html.TextBoxFor(m => m.Name, new {@class="form-control form-input", placeholder = Html.DisplayNameFor(m => m.Name)})
         @Html.ValidationMessageFor(m => m.Name)
     </div>
     <div class="Input-Wrap">
-        @Html.TextBoxFor(m => m.Email, new {@class="form-control", placeholder = Html.DisplayNameFor(m => m.Email)})
+        @Html.TextBoxFor(m => m.Email, new {@class="form-control form-input", placeholder = Html.DisplayNameFor(m => m.Email),pattern="[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\\.[a-z]{2,4}$"})
         @Html.ValidationMessageFor(m => m.Email)
     </div>
     <div class="Input-Wrap">
-        @Html.TextAreaFor(m => m.Message, new {@class="form-control", placeholder = Html.DisplayNameFor(m => m.Message)})
+        @Html.TextAreaFor(m => m.Message, new {@class="form-control form-input ", placeholder = Html.DisplayNameFor(m => m.Message)})
         @Html.ValidationMessageFor(m => m.Message)
     </div>
     <input type="submit" name="Submit" value="Submit" />
