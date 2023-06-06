@@ -34,7 +34,6 @@ header .nav-link {
     color: var(--seco-Color);
 }
 
-
 header .nav-item {
     font-family: 'Lato', sans-serif;
 }
@@ -112,6 +111,10 @@ header .nav-item {
 
 [aria-expanded="true"] #burger > .bar:nth-child(3) {
     transform: translate(0, calc(-1 * var(--size) / 2 + var(--bar-height) / 2)) rotate(135deg);
+}
+
+.Logo a, .navbar-brand {
+    font-size: 2rem;
 }
 /* #endregion*/
 

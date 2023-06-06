@@ -18,7 +18,7 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Text And Image</summary>
+	/// <summary>About Block</summary>
 	[PublishedModel("aboutBlock")]
 	public partial class AboutBlock : ContentBlock
 	{

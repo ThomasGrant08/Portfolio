@@ -4,8 +4,20 @@
 @{
     var content = (ContentModels.SkillBlock)Model.Content;
     var settings = (ContentModels.SkillBlock)Model.Settings;
+    var root = Umbraco.ContentAtRoot().FirstOrDefault() as Master;
 }
 
 <div class="Block SkillBlock">
-
+    <div class="Breakpoint-Wrap">
+        <div class="Text">
+            <h2>@content.Header</h2>
+            @content.Text
+        </div>
+        <div class="SkillContainer">
+            @foreach(Skill skill in root.Skills.Children())
+            {
+                @Html.Partial("Skills Card", (IPublishedContent)skill)
+            }
+        </div>
+    </div>
 </div>

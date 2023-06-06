@@ -12,6 +12,15 @@
         <div class="Text">
             <h2>@content.Header</h2>
             @content.Text
+            @if(content.Link != null)
+            {
+                var text = (String.IsNullOrEmpty(content.CTatext)) ? "Find Out More" : content.CTatext;
+                <a href="@content.Link.Url()">
+                    <div class="CTA">
+                        @text
+                    </div>
+                </a>
+            }
         </div>
         <div class="Image">
             @if(content.Image != null)

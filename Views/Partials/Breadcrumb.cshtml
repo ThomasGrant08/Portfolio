@@ -20,10 +20,10 @@
         @* For each page in the ancestors collection which have been ordered by Level (so we start with the highest top node first) *@
         @foreach (var item in selection.OrderBy(x => x.Level).Skip(1))
         {
-            <li><a href="@item.Url(PublishedUrlProvider)">@item.Name</a> <span class="divider">/</span></li>
+            <li><a href="@item.Url(PublishedUrlProvider)"><strong>@item.Name</strong></a> <span class="divider">/</span></li>
         }
 
         @* Display the current page as the last item in the list *@
-        <li class="active">@Model.Name</li>
+        <li class="active"><strong>@Model.Name</strong></li>
     </ul>
 }

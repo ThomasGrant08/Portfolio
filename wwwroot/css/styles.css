@@ -19,13 +19,23 @@ a {
     --bs-link-hover-color-rgb: var(--seco-Color);
 }
 
-h1 {
+h1, h2 {
     font-family: Futura,Trebuchet MS,Arial,sans-serif;
     font-weight: bold;
+    color: var(--prim-Color);
 }
 
 h1 {
     font-size: 2.5rem;
+    
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-weight: 500;
 }
 
 /* #region 320*/
@@ -35,7 +45,7 @@ h1 {
 /* #region Blocks */
 /* #region Block*/
 .Block {
-    padding: 10px 0;
+    padding: 40px 0;
     overflow: hidden;
     position: relative;
 }
@@ -43,6 +53,45 @@ h1 {
 .Breakpoint-Wrap {
     position: relative;
     z-index: 2;
+}
+
+.Block:nth-child(even):not(.HeroBlock):not(.NavFooter) {
+    background-color: #253D5B;
+    color: white;
+}
+
+.Block:nth-child(even):not(.HeroBlock):not(.NavFooter) * {
+    color: white;
+}
+
+.Block:nth-child(odd):not(.HeroBlock):not(.NavFooter) {
+    color: var(--prim-Color);
+}
+
+
+.Block .Breakpoint-Wrap {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.CTA {
+    padding: 14px 20px;
+    background-color: var(--seco-Color);
+    border-radius: 10px;
+    width: fit-content;
+    font-family: Futura,Trebuchet MS,Arial,sans-serif;
+    font-weight: bold;
+    color: black;
+    transition: all 0.2s ease;
+}
+
+a:has(.CTA) {
+    text-decoration: none;
+}
+
+.CTA:hover {
+    background-color: var(--tert-Color);
+    color: white;
 }
 /* #endregion*/
 
@@ -73,24 +122,26 @@ h1 {
     background: linear-gradient(to right, var(--tert-Color), var(--seco-Color));
     animation: rotate 20s infinite;
     opacity: 0.8;
+    filter: blur(12vmax);
 }
 
-#blur {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    backdrop-filter: blur(12vmax);
-}
-
-#blur {
+.HeroBlock {
     box-shadow: inset 0px 10px 10px -5px rgba(0, 0, 0, 0.5), inset 0px -10px 10px -5px rgba(0, 0, 0, 0.5);
 }
+
+.HeroBlock.Home {
+    padding: 60px 0;
+}
 /* #endregion */
+
+/* #region About Block */
+
+.AboutBlock .Image {
+    aspect-ratio: 1/1;
+}
+
+
+/* #endregion*/
 
 /* #endregion*/
 
@@ -103,6 +154,22 @@ h1 {
     }
     /* #region Blocks */
     /* #region Block*/
+    .Block {
+    }
+
+    .HeroBlock.Home .Text {
+        max-width: 50%;
+    }
+
+    .AboutBlock .Image, .AboutBlock .Text {
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .AboutBlock .Image {
+        width: 550px;
+    }
     /* #endregion*/
 
     /* #endregion*/
@@ -123,7 +190,7 @@ h1 {
     /* #region Blocks */
     /* #region Block*/
     .Block {
-        padding: 20px 0;
+        padding: 60px 0;
     }
 
     .Block .Breakpoint-Wrap {
@@ -132,8 +199,46 @@ h1 {
         align-items: center;
         gap: 40px;
     }
+
+    
     /* #endregion*/
 
+    /* #region Hero Block */
+
+    .HeroBlock .Breakpoint-Wrap{
+        justify-content: left;
+    }
+
+    .HeroBlock.Home {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    .HeroBlock .Text {
+        max-width: 50%;
+    }
+
+    /* #endregion */
+
+    /* #region About Block */
+
+    .AboutBlock .Image{
+        width: 550px;
+    }
+
+    .AboutBlock .Text, .AboutBlock .Image {
+        max-width: 550px;
+    }
+
+    /* #endregion */
+
+    /* #region Footer*/
+    .NavFooter .Breakpoint-Wrap{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: unset;
+    }
+    /* #endregion */
     /* #endregion*/
 
     /* #endregion*/
@@ -166,7 +271,6 @@ h1 {
         padding: 60px 0;
     }
     /* #endregion*/
-
     /* #endregion*/
 
     /* #endregion*/
