@@ -81,8 +81,13 @@ p {
     width: fit-content;
     font-family: Futura,Trebuchet MS,Arial,sans-serif;
     font-weight: bold;
-    color: black;
+    color: white;
     transition: all 0.2s ease;
+}
+
+.Block:not(.AboutBlock) .Text{
+    width: 100%;
+    text-align: center;
 }
 
 a:has(.CTA) {
@@ -193,7 +198,7 @@ a:has(.CTA) {
         padding: 60px 0;
     }
 
-    .Block .Breakpoint-Wrap {
+    .AboutBlock .Breakpoint-Wrap {
         display: flex;
         justify-content: center;
         align-items: center;
