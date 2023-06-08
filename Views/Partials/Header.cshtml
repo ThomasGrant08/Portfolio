@@ -5,7 +5,9 @@
 	<div id="blob"></div>
 	<div class="Breakpoint-Wrap">
 		<div class="Text">
-			@Html.Partial("Breadcrumb")
+			@if(Model.Parent != Umbraco.ContentAtRoot().FirstOrDefault()) {
+				Html.Partial("Breadcrumb");
+			}
 			<h1>@Model.Title</h1>
 			<p><strong>@Model.Text</strong></p>
 		</div>

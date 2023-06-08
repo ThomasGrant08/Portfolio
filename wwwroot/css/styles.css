@@ -90,6 +90,10 @@ p {
     text-align: center;
 }
 
+.Block.HeroBlock .Text {
+    text-align: unset;
+}
+
 a:has(.CTA) {
     text-decoration: none;
 }
@@ -166,10 +170,14 @@ a:has(.CTA) {
         max-width: 50%;
     }
 
-    .AboutBlock .Image, .AboutBlock .Text {
+    .AboutBlock:nth-child(even) .Image, .AboutBlock:nth-child(odd) .Text {
+        max-width: 550px;
+        margin-right: auto;
+    }
+
+    .AboutBlock:nth-child(odd) .Image, .AboutBlock:nth-child(even) .Text {
         max-width: 550px;
         margin-left: auto;
-        margin-right: auto;
     }
 
     .AboutBlock .Image {
@@ -200,7 +208,7 @@ a:has(.CTA) {
 
     .AboutBlock .Breakpoint-Wrap {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 40px;
     }
