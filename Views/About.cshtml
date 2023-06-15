@@ -5,4 +5,6 @@
 	Layout = "Master.cshtml";
 }
 
-@Html.Partial("Header")
+@await Html.PartialAsync("Header")
+
+@await Html.GetBlockListHtmlAsync(Model.Blocks)
