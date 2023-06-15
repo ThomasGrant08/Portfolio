@@ -1,10 +1,12 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using ThomasGrant.Utility;
 
 @{
     var content = (ContentModels.SkillBlock)Model.Content;
     var settings = (ContentModels.SkillBlock)Model.Settings;
     var root = Umbraco.ContentAtRoot().FirstOrDefault() as Master;
+    var skills = ListController.Shuffle(root.Skills.Children().ToList());
 }
 
 <div class="Block SkillBlock">
@@ -14,7 +16,7 @@
             @content.Text
         </div>
         <div class="SkillContainer">
-            @foreach(Skill skill in root.Skills.Children())
+            @foreach(Skill skill in skills.Take(6))
             {
                 @Html.Partial("Skills Card", (IPublishedContent)skill)
             }

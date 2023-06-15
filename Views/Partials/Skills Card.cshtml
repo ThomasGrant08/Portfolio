@@ -1,3 +1,17 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Skill>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+}
+
+
+<div class="SkillCard">
+    <div class="IconContainer" style="background-color: @Model.BackgroundColour;">
+        <img src="@Model.Icon.Url()" alt="@Model.Name" />
+    </div>
+    <div class="Text">
+        <h3>@(Model.Title??Model.Name)</h3>
+        @Model.Description
+    </div>
+</div>

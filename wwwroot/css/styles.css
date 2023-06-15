@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/* #region Universal */
 :root {
     --white: #eae6e1;
     --black: #311817;
@@ -19,7 +20,7 @@ a {
     --bs-link-hover-color-rgb: var(--seco-Color);
 }
 
-h1, h2 {
+h1, h2,h3 {
     font-family: 'Jost', sans-serif;
     font-weight: bold;
     color: var(--seco-Color);
@@ -34,6 +35,10 @@ h2 {
     font-size: 2rem;
 }
 
+h3 {
+    font-size: 1.5rem;
+}
+
 p {
     font-weight: 500;
     color: var(--black);
@@ -43,6 +48,8 @@ p {
     color: unset;
     text-decoration: none;
 }
+
+/* #endregion */
 
 /* #region 320*/
 .Breakpoint-Wrap {
@@ -82,7 +89,7 @@ p {
 
 .CTA {
     padding: 14px 20px;
-    background-color: var(--seco-Color);
+    background-color: var(--prim-Color);
     border-radius: 10px;
     width: fit-content;
     font-family: Futura,Trebuchet MS,Arial,sans-serif;
@@ -105,7 +112,7 @@ a:has(.CTA) {
 }
 
 .CTA:hover {
-    background-color: var(--tert-Color);
+    background-color: var(--accent-Color);
     color: white;
 }
 /* #endregion*/
@@ -158,7 +165,47 @@ a:has(.CTA) {
 
 /* #endregion*/
 
+/* #region Skill Block */
+
+.SkillContainer {
+    display: grid;
+    grid-gap: 15px;
+}
+
+/* #endregion */
+
 /* #endregion*/
+
+/* #region Cards */
+
+
+/* #region Skill Card */
+
+.SkillCard {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 20px;
+    display: grid;
+    gap: 10px;
+    justify-items: center;
+}
+.SkillCard .IconContainer{
+    padding: 20px;
+    border-radius: 50%;
+    width: fit-content;
+    height: fit-content;
+}
+
+.SkillCard img {
+    width: 60px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+/* #endregion */
+
+/* #endregion */
 
 /* #endregion*/
 
@@ -172,9 +219,18 @@ a:has(.CTA) {
     .Block {
     }
 
+    
+    /* #endregion*/
+
+    /* #region Hero BLock */
+
     .HeroBlock.Home .Text {
         max-width: 50%;
     }
+
+    /* #endregion */
+
+    /* #region About Block */
 
     .AboutBlock:nth-child(even) .Image, .AboutBlock:nth-child(odd) .Text {
         max-width: 550px;
@@ -189,7 +245,17 @@ a:has(.CTA) {
     .AboutBlock .Image {
         width: 550px;
     }
-    /* #endregion*/
+
+    /* #endregion */
+
+    /* #region Skill Block */
+
+    .SkillContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* #endregion */
 
     /* #endregion*/
 
@@ -251,6 +317,14 @@ a:has(.CTA) {
 
     /* #endregion */
 
+    /* #region Skill Block */
+
+    .SkillContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* endregion */
+
     /* #region Footer*/
     .NavFooter .Breakpoint-Wrap{
         display: grid;
@@ -258,6 +332,26 @@ a:has(.CTA) {
         align-items: unset;
     }
     /* #endregion */
+    /* #endregion*/
+
+    /* #region Cards */
+
+    /* #region Skill Card */
+
+    .SkillCard img {
+        width: 40px;
+    }
+
+    .SkillCard {
+        display: flex;
+    }
+
+    .SkillCard .Text {
+        text-align: left !important;
+    }
+
+    /* #endregion */
+
     /* #endregion*/
 
     /* #endregion*/
