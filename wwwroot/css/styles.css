@@ -1,17 +1,17 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --prim-Color: #372549;
-    --seco-Color: #FE5F55;
-    --tert-Color: #65AFFF;
-    --body-Color: #F7F7FF;
-    --white: #F5F5F5;
+    --white: #eae6e1;
+    --black: #311817;
+    --prim-Color: #BF7245;
+    --seco-Color: #8C4227;
+    --accent-Color: #BF7379;
 }
 
 body {
-    background-color: var(--body-Color);
-    background-image: url(/images/paper_texture.png);
+    background-color: var(--white);
     background-size: 200px;
 }
 
@@ -20,9 +20,9 @@ a {
 }
 
 h1, h2 {
-    font-family: Futura,Trebuchet MS,Arial,sans-serif;
+    font-family: 'Jost', sans-serif;
     font-weight: bold;
-    color: var(--prim-Color);
+    color: var(--seco-Color);
 }
 
 h1 {
@@ -36,6 +36,12 @@ h2 {
 
 p {
     font-weight: 500;
+    color: var(--black);
+}
+
+.NoLinkStyles {
+    color: unset;
+    text-decoration: none;
 }
 
 /* #region 320*/
@@ -56,12 +62,12 @@ p {
 }
 
 .Block:nth-child(even):not(.HeroBlock):not(.NavFooter) {
-    background-color: #253D5B;
+    background-color: var(--seco-Color);
     color: white;
 }
 
 .Block:nth-child(even):not(.HeroBlock):not(.NavFooter) * {
-    color: white;
+    color: var(--white);
 }
 
 .Block:nth-child(odd):not(.HeroBlock):not(.NavFooter) {
@@ -121,21 +127,21 @@ a:has(.CTA) {
 
 #blob {
     background-color: white;
-    height: 34vmax;
+    height: 20vmax;
     aspect-ratio: 1;
     position: absolute;
     left: 50%;
     top: 50%;
     translate: -50% -50%;
     border-radius: 50%;
-    background: linear-gradient(to right, var(--tert-Color), var(--seco-Color));
+    background: linear-gradient(to right, var(--prim-Color), var(--seco-Color));
     animation: rotate 20s infinite;
     opacity: 0.8;
     filter: blur(12vmax);
 }
 
 .HeroBlock {
-    box-shadow: inset 0px 10px 10px -5px rgba(0, 0, 0, 0.5), inset 0px -10px 10px -5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px -10px 10px -5px rgba(0, 0, 0, 0.5);
 }
 
 .HeroBlock.Home {
