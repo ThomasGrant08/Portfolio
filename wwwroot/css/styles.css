@@ -189,16 +189,17 @@ a:has(.CTA) {
     display: grid;
     gap: 10px;
     justify-items: center;
+    align-items: center;
 }
 .SkillCard .IconContainer{
-    padding: 20px;
+    padding: 10px;
     border-radius: 50%;
     width: fit-content;
     height: fit-content;
 }
 
 .SkillCard img {
-    width: 60px;
+    width: 70px;
     aspect-ratio: 1/1;
     object-fit: contain;
 }
@@ -339,7 +340,7 @@ a:has(.CTA) {
     /* #region Skill Card */
 
     .SkillCard img {
-        width: 40px;
+        width: 60px;
     }
 
     .SkillCard {
