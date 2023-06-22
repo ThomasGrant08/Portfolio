@@ -20,7 +20,7 @@ a {
     --bs-link-hover-color-rgb: var(--seco-Color);
 }
 
-h1, h2,h3 {
+h1, h2, h3 {
     font-family: 'Jost', sans-serif;
     font-weight: bold;
     color: var(--seco-Color);
@@ -28,15 +28,15 @@ h1, h2,h3 {
 
 h1 {
     font-size: 2.5rem;
-    
 }
 
 h2 {
     font-size: 2rem;
 }
 
-h3 {
+h3, h3.accordion-button {
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
 p {
@@ -73,9 +73,9 @@ p {
     color: white;
 }
 
-.Block:nth-child(even):not(.HeroBlock):not(.NavFooter) * {
-    color: var(--white);
-}
+    .Block:nth-child(even):not(.HeroBlock):not(.NavFooter) * {
+        color: var(--white);
+    }
 
 .Block:nth-child(odd):not(.HeroBlock):not(.NavFooter) {
     color: var(--prim-Color);
@@ -98,7 +98,7 @@ p {
     transition: all 0.2s ease;
 }
 
-.Block:not(.AboutBlock) .Text{
+.Block:not(.AboutBlock) .Text {
     width: 100%;
     text-align: center;
 }
@@ -151,9 +151,9 @@ a:has(.CTA) {
     box-shadow: inset 0px -10px 10px -5px rgba(0, 0, 0, 0.5);
 }
 
-.HeroBlock.Home {
-    padding: 60px 0;
-}
+    .HeroBlock.Home {
+        padding: 60px 0;
+    }
 /* #endregion */
 
 /* #region About Block */
@@ -178,7 +178,6 @@ a:has(.CTA) {
 
 /* #region Cards */
 
-
 /* #region Skill Card */
 
 .SkillCard {
@@ -191,17 +190,26 @@ a:has(.CTA) {
     justify-items: center;
     align-items: center;
 }
-.SkillCard .IconContainer{
-    padding: 10px;
-    border-radius: 50%;
-    width: fit-content;
-    height: fit-content;
-}
+
+.SkillCard .IconContainer {
+        padding: 10px;
+        border-radius: 50%;
+        width: fit-content;
+        height: fit-content;
+    }
 
 .SkillCard img {
-    width: 70px;
-    aspect-ratio: 1/1;
-    object-fit: contain;
+        width: 70px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+    }
+
+.SkillCard p, .SkillCard h3 {
+    color: white;
+}
+
+.accordion-body p {
+    margin-bottom: 0;
 }
 
 /* #endregion */
@@ -220,7 +228,7 @@ a:has(.CTA) {
     .Block {
     }
 
-    
+
     /* #endregion*/
 
     /* #region Hero BLock */
@@ -260,9 +268,8 @@ a:has(.CTA) {
 
     /* #endregion*/
 
-    /* #endregion*/
-
 }
+/* #endregion*/
 
 /* #region 1110*/
 
@@ -286,12 +293,12 @@ a:has(.CTA) {
         gap: 40px;
     }
 
-    
+
     /* #endregion*/
 
     /* #region Hero Block */
 
-    .HeroBlock .Breakpoint-Wrap{
+    .HeroBlock .Breakpoint-Wrap {
         justify-content: left;
     }
 
@@ -308,7 +315,7 @@ a:has(.CTA) {
 
     /* #region About Block */
 
-    .AboutBlock .Image{
+    .AboutBlock .Image {
         width: 550px;
     }
 
@@ -324,10 +331,14 @@ a:has(.CTA) {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .SkillBlock.Page .SkillContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     /* endregion */
 
     /* #region Footer*/
-    .NavFooter .Breakpoint-Wrap{
+    .NavFooter .Breakpoint-Wrap {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         align-items: unset;
@@ -347,9 +358,9 @@ a:has(.CTA) {
         display: flex;
     }
 
-    .SkillCard .Text {
-        text-align: left !important;
-    }
+        .SkillCard .Text {
+            text-align: left !important;
+        }
 
     /* #endregion */
 
@@ -357,6 +368,8 @@ a:has(.CTA) {
 
     /* #endregion*/
 }
+
+/* #endregion */
 
 
 /* #region 1410*/
@@ -370,15 +383,19 @@ a:has(.CTA) {
     h1 {
         font-size: 4rem;
     }
+
     h2 {
         font-size: 2.5rem;
     }
+
     h3 {
         font-size: 2rem;
     }
-    p{
+
+    p {
         font-size: 1rem;
     }
+
     /* #region Blocks */
     /* #region Block*/
     .Block {
@@ -387,6 +404,7 @@ a:has(.CTA) {
     /* #endregion*/
     /* #endregion*/
 
-    /* #endregion*/
+    
 
 }
+/* #endregion*/

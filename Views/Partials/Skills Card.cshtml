@@ -1,17 +1,24 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Skill>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
-
+@using ThomasGrant.Utility;
 @{
+    var uniqueID = UniqueIDBuilder.Generate();
 }
 
 
-<div class="SkillCard">
+<div class="SkillCard" data-bs-toggle="collapse" data-bs-target="#Q@(uniqueID)" aria-expanded="false" aria-controls="Q@(uniqueID)">
     <div class="IconContainer" style="background-color: @Model.BackgroundColour;">
         <img src="@Model.Icon.Url()" alt="@Model.Name" />
     </div>
-    <div class="Text">
-        <h3>@(Model.Title??Model.Name)</h3>
-        @Model.Description
+    <div class="Text accordion-item">
+        <h3 type="button" class="accordion-header" >@(Model.Title ?? Model.Name)</h3>
+        
+        <div class="accordion-collapse collapse" id="Q@(uniqueID)" >
+            <div class="accordion-body">
+                @Model.Description
+            </div>
+        
+        </div>
     </div>
 </div>

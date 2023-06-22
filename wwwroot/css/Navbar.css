@@ -11,7 +11,7 @@ header, footer, .NavFooter {
 }
 
 body {
-    margin-top: var(--nav-height);
+    margin-top: var(--nav-height) !important;
 }
 
 .navbar {

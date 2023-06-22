@@ -6,3 +6,17 @@
 }
 
 @Html.Partial("Header")
+
+<div class="Block SkillBlock Page">
+	<div class="Breakpoint-Wrap">
+		<div class="Text">
+
+		</div>
+		<div class="SkillContainer" id="accordion">
+			@foreach (Skill skill in Model.Children())
+			{
+				@Html.Partial("Skills Card", (IPublishedContent)skill)
+			}
+		</div>
+	</div>
+</div>
